@@ -123,8 +123,8 @@ export default function App() {
 
               {/* Resume button */}
               <a
-                href="/resume.pdf"
-                download="SaranRaj_Resume.pdf"
+                href="resume.pdf"
+                download="SaranRaj_Resume1.pdf"
                 className="flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
               >
                 <FaDownload />
@@ -482,7 +482,7 @@ export default function App() {
                     <span>Email</span>
                   </a>
 
-                 
+
 
                 </div>
 
