@@ -82,54 +82,57 @@ export default function App() {
           <div className="bg-gradient-to-br from-slate-100 via-blue-50 to-white text-black min-h-screen font-sans">
 
             {/* Navbar */}
-            <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
+              <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-              {/* Logo */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center font-bold hover:scale-110 transition">
-                  S
+                {/* Logo */}
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center font-bold hover:scale-110 transition">
+                    S
+                  </div>
+
+                  <h1 className="font-bold text-lg hover:tracking-wider transition">
+                    R.SaranRaj - UI/UX Designer
+                  </h1>
                 </div>
 
-                <h1 className="font-bold text-lg hover:tracking-wider transition">
-                  R.SaranRaj - UI/UX Designer
-                </h1>
+                {/* Nav items (UPDATED) */}
+                <ul className="hidden md:flex gap-6 text-gray-700">
+                  {[
+                    { name: "Work", id: "work" },
+                    { name: "About", id: "about" },
+                    { name: "Skills", id: "what-i-bring" },
+                    { name: "Contact", id: "contact" },
+                  ].map((item) => (
+                    <li
+                      key={item.name}
+                      onClick={() => {
+                        setActive(item.id);
+                        scrollToSection(item.id);
+                      }}
+                      className="relative cursor-pointer px-4 py-2 rounded-full transition hover:text-blue-600"
+                    >
+                      {/* hover background */}
+                      <span className="absolute inset-0 bg-blue-50 rounded-full opacity-0 hover:opacity-100 transition"></span>
+
+                      <span className="relative z-10">
+                        {item.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Resume button */}
+                <a
+                  href="resume.pdf"
+                  download="SaranRaj_Resume1.pdf"
+                  className="flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
+                >
+                  <FaDownload />
+                  Resume
+                </a>
+
               </div>
-
-              {/* Nav items (UPDATED) */}
-              <ul className="hidden md:flex gap-6 text-gray-700">
-                {[
-                  { name: "Work", id: "work" },
-                  { name: "About", id: "about" },
-                  { name: "Skills", id: "what-i-bring" },
-                  { name: "Contact", id: "contact" },
-                ].map((item) => (
-                  <li
-                    key={item.name}
-                    onClick={() => {
-                      setActive(item.id);
-                      scrollToSection(item.id);
-                    }}
-                    className="relative cursor-pointer px-4 py-2 rounded-full transition hover:text-blue-600"
-                  >
-                    {/* hover background */}
-                    <span className="absolute inset-0 bg-blue-50 rounded-full opacity-0 hover:opacity-100 transition"></span>
-
-                    <span className="relative z-10">
-                      {item.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Resume button */}
-              <a
-                href="resume.pdf"
-                download="SaranRaj_Resume1.pdf"
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
-              >
-                <FaDownload />
-                Resume
-              </a>
             </nav>
 
             {/* Hero */}
