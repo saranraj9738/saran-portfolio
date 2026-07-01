@@ -171,7 +171,7 @@ export default function App() {
                       {/* PROJECT BUTTON */}
                       <button
                         onClick={() => scrollToSection("work")}
-                        className="flex items-center gap-2 bg-blue-100 text-blue-700 px-6 py-3 rounded-full hover:bg-blue-200 hover:scale-105 transition"
+                        className="flex items-center gap-2 bg-white border border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-50 hover:scale-105 transition"
                       >
                         <FiExternalLink />
                         View Projects
