@@ -301,206 +301,208 @@ export default function App() {
                     >
                       <div className="group cursor-pointer">
 
-                        <div className="overflow-hidden rounded-3xl">
-                          <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#0F172A] to-[#1E293B] h-[460px] flex items-center justify-center">
-                            <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-[#0F172A] to-[#1E293B] h-[460px] flex items-center justify-center">
-                              <img
-                                src={project.img}
-                                alt={project.title}
-                                className="max-w-[85%] max-h-[85%] object-contain group-hover:scale-105 transition duration-300"
-                              />
-                            </div>
-                          </div>
+                        <div
+                          className={`overflow-hidden rounded-3xl h-[460px] flex items-center justify-center ${project.title === "Music Healing"
+                              ? "bg-gradient-to-br from-emerald-50 via-teal-100 to-sky-100"
+                              : "bg-gradient-to-br from-blue-50 via-indigo-100 to-violet-100"
+                            }`}
+                        >
+                          <img
+                            src={project.img}
+                            alt={project.title}
+                            className="max-w-[85%] max-h-[85%] object-contain group-hover:scale-105 transition duration-300"
+                          />
                         </div>
-                        <h3 className="text-3xl font-bold mt-5 group-hover:translate-x-1 transition">
-                          {project.title}
-                        </h3>
-
-                        <p className="text-gray-600 mt-3">
-                          {project.desc}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* SERVICES / SKILLS GRID (UPDATED ID = skills already used above) */}
-            <section id="what-i-bring" className="scroll-mt-24">
-              <div className="max-w-7xl mx-auto px-6 py-24">
-                <h2 className="text-5xl font-bold">What I Bring</h2>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
-                  {services.map((item) => (
-                    <div
-                      key={item}
-                      className="bg-white/70 backdrop-blur-md border border-white/40 rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300"
-                    >
-                      <h3 className="font-bold text-xl">
-                        {item}
+        
+                      <h3 className="text-3xl font-bold mt-5 group-hover:translate-x-1 transition">
+                        {project.title}
                       </h3>
 
-                      <div className="w-12 h-1 bg-blue-600 rounded-full mt-4"></div>
+                      <p className="text-gray-600 mt-3">
+                        {project.desc}
+                      </p>
                     </div>
+                    </Link>
                   ))}
-                </div>
               </div>
-            </section>
-            {/* CONTACT SECTION (UPDATED ID = contact) */}
-            <section id="contact" className="border-t">
-              <div className="max-w-7xl mx-auto px-6 py-24">
-
-                <div className="grid md:grid-cols-2 gap-16 items-start">
-
-                  {/* LEFT SIDE */}
-                  <div>
-
-                    <span className="text-gray-500 font-medium">
-                      Contact Me
-                    </span>
-
-                    <h2 className="text-5xl font-bold mt-3">
-                      Let’s build
-                      <br />
-                      something thoughtful
-                    </h2>
-
-                    <p className="text-gray-600 mt-6 text-lg leading-relaxed">
-                      Open to UI/UX Designer opportunities where I can contribute,
-                      learn and create impactful user experiences.
-                    </p>
-
-                    <p className="text-gray-600 mt-4 text-lg leading-relaxed">
-                      Let’s connect and build something great together.
-                    </p>
-
-                    <div className="mt-8">
-                      <span className="px-4 py-2 bg-gray-100 rounded-full text-sm hover:scale-105 transition inline-block">
-                        Available for opportunities
-                      </span>
-                    </div>
-
-                  </div>
-
-                  {/* RIGHT SIDE - FORM */}
-                  <div>
-
-                    <form onSubmit={sendEmail} className="space-y-5">
-
-                      <input
-                        type="text"
-                        placeholder="Name"
-                        value={formData.name}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            name: e.target.value,
-                          })
-                        }
-                        className="w-full border rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-black transition"
-                      />
-
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            email: e.target.value,
-                          })
-                        }
-                        className="w-full border rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-black transition"
-                      />
-
-                      <textarea
-                        rows="6"
-                        placeholder="Message"
-                        value={formData.message}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            message: e.target.value,
-                          })
-                        }
-                        className="w-full border rounded-3xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-black transition"
-                      ></textarea>
-
-                      <button
-                        type="submit"
-                        className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:scale-105 hover:bg-blue-700 transition"
-                      >
-                        <FaPaperPlane />
-                        Send Message
-                      </button>
-
-                    </form>
-
-                  </div>
-
-                </div>
-              </div>
-            </section>
-
-            {/* FOOTER */}
-            <footer className="border-t">
-              <div className="max-w-7xl mx-auto px-6 py-10 flex justify-between items-center">
-
-                <div className="flex items-center gap-3">
-
-                  <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
-                    S
-                  </div>
-
-                  <div>
-                    <h3 className="font-bold">
-                      R.SaranRaj
-                    </h3>
-
-                    <p className="text-gray-500">
-                      UI/UX Designer
-                    </p>
-                  </div>
-
-                </div>
-
-                <div className="flex flex-col md:flex-row gap-4 text-gray-600">
-
-                  <a
-                    href="https://www.linkedin.com/in/saran-raj-17a146293"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 hover:text-blue-600 transition"
-                  >
-                    <FaLinkedin size={20} />
-                    <span>LinkedIn</span>
-                  </a>
-
-                  <a
-                    href="mailto:saranraj9738@gmail.com"
-                    className="flex items-center gap-2 hover:text-blue-600 transition"
-                  >
-                    <HiOutlineMail size={20} />
-                    <span>Email</span>
-                  </a>
-
-
-
-                </div>
-
-              </div>
-            </footer>
-
           </div>
+            </section>
+
+            {/* SERVICES / SKILLS GRID (UPDATED ID = skills already used above) */ }
+  <section id="what-i-bring" className="scroll-mt-24">
+    <div className="max-w-7xl mx-auto px-6 py-24">
+      <h2 className="text-5xl font-bold">What I Bring</h2>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+        {services.map((item) => (
+          <div
+            key={item}
+            className="bg-white/70 backdrop-blur-md border border-white/40 rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300"
+          >
+            <h3 className="font-bold text-xl">
+              {item}
+            </h3>
+
+            <div className="w-12 h-1 bg-blue-600 rounded-full mt-4"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  {/* CONTACT SECTION (UPDATED ID = contact) */ }
+  <section id="contact" className="border-t">
+    <div className="max-w-7xl mx-auto px-6 py-24">
+
+      <div className="grid md:grid-cols-2 gap-16 items-start">
+
+        {/* LEFT SIDE */}
+        <div>
+
+          <span className="text-gray-500 font-medium">
+            Contact Me
+          </span>
+
+          <h2 className="text-5xl font-bold mt-3">
+            Let’s build
+            <br />
+            something thoughtful
+          </h2>
+
+          <p className="text-gray-600 mt-6 text-lg leading-relaxed">
+            Open to UI/UX Designer opportunities where I can contribute,
+            learn and create impactful user experiences.
+          </p>
+
+          <p className="text-gray-600 mt-4 text-lg leading-relaxed">
+            Let’s connect and build something great together.
+          </p>
+
+          <div className="mt-8">
+            <span className="px-4 py-2 bg-gray-100 rounded-full text-sm hover:scale-105 transition inline-block">
+              Available for opportunities
+            </span>
+          </div>
+
+        </div>
+
+        {/* RIGHT SIDE - FORM */}
+        <div>
+
+          <form onSubmit={sendEmail} className="space-y-5">
+
+            <input
+              type="text"
+              placeholder="Name"
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  name: e.target.value,
+                })
+              }
+              className="w-full border rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-black transition"
+            />
+
+            <input
+              type="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  email: e.target.value,
+                })
+              }
+              className="w-full border rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-black transition"
+            />
+
+            <textarea
+              rows="6"
+              placeholder="Message"
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  message: e.target.value,
+                })
+              }
+              className="w-full border rounded-3xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-black transition"
+            ></textarea>
+
+            <button
+              type="submit"
+              className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:scale-105 hover:bg-blue-700 transition"
+            >
+              <FaPaperPlane />
+              Send Message
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* FOOTER */ }
+  <footer className="border-t">
+    <div className="max-w-7xl mx-auto px-6 py-10 flex justify-between items-center">
+
+      <div className="flex items-center gap-3">
+
+        <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+          S
+        </div>
+
+        <div>
+          <h3 className="font-bold">
+            R.SaranRaj
+          </h3>
+
+          <p className="text-gray-500">
+            UI/UX Designer
+          </p>
+        </div>
+
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-4 text-gray-600">
+
+        <a
+          href="https://www.linkedin.com/in/saran-raj-17a146293"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-blue-600 transition"
+        >
+          <FaLinkedin size={20} />
+          <span>LinkedIn</span>
+        </a>
+
+        <a
+          href="mailto:saranraj9738@gmail.com"
+          className="flex items-center gap-2 hover:text-blue-600 transition"
+        >
+          <HiOutlineMail size={20} />
+          <span>Email</span>
+        </a>
+
+
+
+      </div>
+
+    </div>
+  </footer>
+
+          </div >
         }
       />
 
-      {/* ROUTES (UNCHANGED - IMPORTANT) */}
+{/* ROUTES (UNCHANGED - IMPORTANT) */ }
       <Route path="/music-healing" element={<MusicHealing />} />
       <Route path="/shareseat" element={<ShareSeat />} />
       <Route path="/music-healing-gallery" element={<MusicHealingGallery />} />
       <Route path="/shareseat-gallery" element={<ShareSeatGallery />} />
-    </Routes>
+    </Routes >
   );
 }
