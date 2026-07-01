@@ -99,8 +99,8 @@ export default function App() {
                 {/* Nav items (UPDATED) */}
                 <ul className="hidden md:flex gap-6 text-gray-700">
                   {[
-                    { name: "Work", id: "work" },
                     { name: "About", id: "about" },
+                    { name: "Work", id: "work" },
                     { name: "Skills", id: "what-i-bring" },
                     { name: "Contact", id: "contact" },
                   ].map((item) => (
